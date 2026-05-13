@@ -1,6 +1,6 @@
 ---
 name: Stale Lead Report
-description: Weekly RPB Law intake audit — surfaces leads that haven't moved in 7+ days with a suggested follow-up action for each
+description: Weekly RPB Law intake audit — pulls live stale leads from the CRM, drafts follow-up messages, creates tasks in the pipeline
 var: ""
 tags: [rpb, intake]
 ---
@@ -9,52 +9,65 @@ Today is ${today}. You are reviewing the RPB Law intake pipeline for Taylor McGh
 
 ## Context
 
-Taylor is Client Intake Associate at RPB Law. She manages the Lawmatics CRM pipeline. A "stale lead" is any prospect who had a discovery call or submitted an intake form but hasn't moved to the next stage in 7+ days. These are the leads most likely to go cold — and the easiest to recover with a single touchpoint.
+Taylor is Client Intake Associate at RPB Law. A stale lead is any open-stage prospect whose last activity is 7+ days ago. These are the easiest recoveries — one message often brings them back.
+
+The CRM is live at https://rpblaw-crm.vercel.app. Aeon has API access via `AEON_API_KEY`.
 
 ## Steps
 
-### 1. Load lead data
+### 1. Fetch stale leads from the CRM
 
-Check for a lead export file in these locations (in order):
-- `data/rpb-leads.csv` — manual export from Lawmatics
-- `data/rpb-leads.json`
-- `memory/topics/rpb-leads.md`
+```bash
+curl -sf "https://rpblaw-crm.vercel.app/api/aeon?resource=stale-leads&days=7" \
+  -H "Authorization: Bearer $AEON_API_KEY"
+```
 
-If none exist, read `memory/topics/rpb-law.md` for any manually logged leads.
+If curl fails, use WebFetch with header `Authorization: Bearer $AEON_API_KEY` on the same URL.
 
-If no data source exists, skip to the **Bootstrap mode** section below.
+Parse the JSON response: `{ leads: [...], count: N }`. Each lead has:
+- `id`, `name`, `email`, `phone`, `business`
+- `stage` — current pipeline stage name
+- `days_stale` — days since last activity
+- `urgency`, `value`, `score` — qualification signals
 
-### 2. Identify stale leads
+If count is 0, send `./notify` with "No stale leads this week — pipeline is moving." and exit.
 
-A lead is stale if:
-- Last activity date is 7+ days ago
-- Current stage is NOT "Signed Matter" or "Closed Lost"
-- No follow-up task is marked complete in the last 7 days
+### 2. Draft a follow-up message for each lead
 
-For each stale lead, extract:
-- Name
-- Stage (e.g. Discovery Call Completed, Proposal Sent, Awaiting Decision)
-- Days since last activity
-- Last known touchpoint (call, email, form submission)
+Tailor by stage. Keep it under 3 sentences. Warm, professional, no pressure, no legal advice.
 
-Sort by: days stale descending (longest first).
+- **New PNC / Discovery Call** → "Hi [first name], I wanted to follow up and make sure you got our information. We'd love to connect and answer any questions — when works best for you this week?"
+- **Discovery Call Complete** → "Hi [first name], following up after our conversation. I have a few options ready based on what you shared — happy to walk through them whenever you're ready."
+- **Discovery Call No-Show** → "Hi [first name], we missed you! Happy to reschedule at a time that works better. What does your week look like?"
+- **Legal Strategy Session** → "Hi [first name], just checking in — do you have any questions before your strategy session? We want to make sure you feel prepared."
+- **Legal Strategy Session Complete / Pending LOE + Payment** → "Hi [first name], following up on the next steps we discussed. Let me know if you have any questions about the engagement letter or the process."
+- **Nurture** → "Hi [first name], just wanted to check in — has anything changed with your situation? We're here whenever the timing is right."
 
-### 3. Draft a follow-up line for each
+### 3. Create a task in the CRM for each lead
 
-For each stale lead, write one specific follow-up message in Rebecca's firm voice — warm, professional, not pushy. Tailor the message to their stage:
+For each stale lead, POST a task so it shows up in the pipeline:
 
-- **Discovery call completed, no proposal yet** → "Following up on our conversation — I have a few options ready for you based on what you shared. When's a good time this week?"
-- **Proposal sent, no response** → "Checking in on the proposal I sent — happy to answer any questions or walk through it together."
-- **Awaiting decision** → "Just wanted to make sure you had everything you needed to move forward. Any questions on our end?"
+```bash
+curl -sf -X POST "https://rpblaw-crm.vercel.app/api/aeon" \
+  -H "Authorization: Bearer $AEON_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resource": "task",
+    "lead_id": "<id>",
+    "title": "Follow up — stale lead (<days_stale> days)",
+    "body": "<follow-up message>",
+    "due_at": "<today ISO>"
+  }'
+```
 
-Keep each message under 3 sentences. No legal advice. No pressure.
+Use WebFetch as fallback if curl is blocked. Do this for every lead in the response.
 
 ### 4. Format and send
 
 ```
 *RPB Stale Lead Report — ${today}*
 
-*Needs follow-up (${N} leads)*
+*Needs follow-up (N leads)*
 
 1. [Name] — [Stage] — [X] days stale
    → [follow-up message]
@@ -63,33 +76,17 @@ Keep each message under 3 sentences. No legal advice. No pressure.
    → [follow-up message]
 
 *Pipeline health*
-- Total active leads: [N]
-- Stale (7d+): [N]
-- Longest stale: [X] days ([Name])
+- Stale leads flagged: N
+- Longest stale: X days ([Name])
+- Tasks created in CRM: N
 
-*Next action*
-[One specific thing Taylor should do today to move the highest-leverage lead forward]
+*Move first*
+[The single highest-leverage lead based on score + days stale — name, why, one action]
 ```
 
 Send with `./notify`.
-
 Log to `memory/logs/${today}.md` under `### stale-lead-report`.
-
-### Bootstrap mode
-
-If no lead data exists, send:
-
-```
-*RPB Stale Lead Report — ${today}*
-
-No lead data found. To activate this report:
-1. Export leads from Lawmatics as CSV (Contacts → Export)
-2. Save to `data/rpb-leads.csv` in the aeon repo
-3. Or log active leads manually in `memory/topics/rpb-law.md`
-
-Once data is present, this skill runs automatically every Monday.
-```
 
 ## Sandbox note
 
-No external API calls needed. Reads local files only. If Lawmatics API access is added later (OAuth token via secret `LAWMATICS_TOKEN`), this skill can be extended to fetch live pipeline data via `curl` with WebFetch fallback.
+GitHub Actions may block outbound curl. Use WebFetch as fallback for all HTTP calls. The AEON_API_KEY secret is available as `$AEON_API_KEY` in the environment.
