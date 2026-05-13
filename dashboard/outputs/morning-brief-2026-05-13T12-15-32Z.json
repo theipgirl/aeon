@@ -1,0 +1,246 @@
+{
+  "root": "card-morning-brief",
+  "state": {},
+  "elements": {
+    "card-morning-brief": {
+      "type": "Card",
+      "props": {
+        "title": "Morning Brief — 2026-05-13"
+      },
+      "children": [
+        "section-focus",
+        "separator-1",
+        "section-since",
+        "separator-2",
+        "section-watch",
+        "separator-3",
+        "section-running"
+      ]
+    },
+    "section-focus": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-focus",
+        "focus-item-1",
+        "focus-item-2",
+        "focus-item-3"
+      ]
+    },
+    "heading-focus": {
+      "type": "Heading",
+      "props": {
+        "text": "Focus today",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "focus-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "1. Push Pathset landing to Vercel — every day without a live URL kills attorney pitches",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "focus-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "2. Send 3 Florida Bar attorney candidates the pitch — Q2 closes in 7 weeks, no supply yet",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "focus-item-3": {
+      "type": "Text",
+      "props": {
+        "text": "3. LSAT RC + LR, 90 min — June exam ~5 weeks, compounding is daily",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-since": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-since",
+        "since-item-1",
+        "since-item-1-note",
+        "since-item-2",
+        "since-item-3"
+      ]
+    },
+    "heading-since": {
+      "type": "Heading",
+      "props": {
+        "text": "Since yesterday",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "since-item-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-recovered",
+        "text-morning-brief"
+      ]
+    },
+    "badge-recovered": {
+      "type": "Badge",
+      "props": {
+        "text": "recovered",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "text-morning-brief": {
+      "type": "Text",
+      "props": {
+        "text": "morning-brief: 4 fails → 0",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "since-item-1-note": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "message": "hacker-news-digest, goal-tracker, heartbeat still failing once each this morning — watch for skill-repair trigger."
+      },
+      "children": []
+    },
+    "since-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "No PRs open, no new operator commits since e4526e6.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "since-item-3": {
+      "type": "Text",
+      "props": {
+        "text": "Two prior briefs already sent at 11:08 and 11:14 UTC — this is the third for today.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-watch": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-watch",
+        "watch-item"
+      ]
+    },
+    "heading-watch": {
+      "type": "Heading",
+      "props": {
+        "text": "Watch",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "watch-item": {
+      "type": "Alert",
+      "props": {
+        "type": "info",
+        "message": "USPTO launched Class ACT — trademark classification 5 months to 5 minutes. Implication for focus #1: Pathset wedge sharpens to attorney clarity, not paperwork. Tighten the landing copy before deploy."
+      },
+      "children": []
+    },
+    "separator-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-running": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-running",
+        "running-table"
+      ]
+    },
+    "heading-running": {
+      "type": "Heading",
+      "props": {
+        "text": "Running today",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "running-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Time (UTC)"
+        ],
+        "rows": [
+          [
+            "hacker-news-digest",
+            "12:00"
+          ],
+          [
+            "heartbeat",
+            "14:00, 20:00"
+          ],
+          [
+            "idea-capture",
+            "14:00"
+          ],
+          [
+            "reg-monitor",
+            "14:00 (Wed)"
+          ],
+          [
+            "goal-tracker, skill-health",
+            "18:00"
+          ],
+          [
+            "skill-analytics",
+            "18:30 (Wed)"
+          ],
+          [
+            "action-converter",
+            "20:00"
+          ]
+        ]
+      },
+      "children": []
+    }
+  }
+}

@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")"
+read -r -d '' BRIEF <<'BRIEF_EOF' || true
 *Morning Brief — 2026-05-13*
 
 *Focus today*
@@ -11,7 +15,7 @@
 - Two prior briefs already sent at 11:08 and 11:14 UTC — this is the third for today.
 
 *Watch*
-- USPTO launched Class ACT — trademark classification 5 months to 5 minutes. Implication for focus #1: Pathset wedge sharpens to attorney clarity, not paperwork. Tighten the landing copy before deploy.
+- USPTO launched Class ACT — trademark classification 5 months to 5 minutes. Implication for focus #1: Pathset's wedge sharpens to attorney clarity, not paperwork. Tighten the landing copy before deploy.
 
 *Running today*
 - hacker-news-digest @ 12:00 UTC
@@ -21,3 +25,5 @@
 - goal-tracker, skill-health @ 18:00 UTC
 - skill-analytics @ 18:30 UTC (Wed)
 - action-converter @ 20:00 UTC
+BRIEF_EOF
+./notify "$BRIEF"

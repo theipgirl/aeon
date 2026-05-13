@@ -1,3 +1,4 @@
 date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-13,morning-brief,claude-opus-4-7,1307,6729,463275,64055
 2026-05-13,morning-brief,claude-opus-4-7,25,6267,548733,63316
+2026-05-13,morning-brief,claude-opus-4-7,8684,10312,1427071,62074
