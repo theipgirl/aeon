@@ -3,36 +3,25 @@
 
 ## Operator
 
-Taylor McGhee (@theipgirl). Miami. Single mother of two. MBA candidate. Building Pathset. Running RPB Law intake. LSAT target 170, June/August exam.
+Taylor McGhee (@theipgirl). Miami. Single mother of two. MBA candidate. Building Pathset. Running RPB Law intake. LSAT target 170, June exam.
 
 ## Active Projects
 
-### Pathset
-IP education and attorney-matching platform for early-stage founders.
-- Stack: Next.js, TypeScript, Tailwind → Vercel
-- Revenue model: Free assessment → $50 IP Clarity Session → Pathset Key ($29.99/mo) → DIY filing (~$20)
-- Florida Bar compliant: charge client directly, subcontract attorney, keep fee as document prep
-- Required footer: "We are not lawyers. We do not provide legal advice."
-- Status: First clients converted. 3 attorney partners needed. Landing page deploy pending.
-- Q2 priorities: Vercel deploy, Lawmatics webhook, $50 consultation funnel, 3 attorney partners
+→ See [`memory/topics/pathset.md`](topics/pathset.md) for full Pathset detail (stack, revenue model, compliance, status, competitive context)
+→ See [`memory/topics/work.md`](topics/work.md) for RPB Law, 7PM Agency, LSAT detail
 
-### RPB Law (Client Intake)
-- Role: Client intake associate ($15/hr, ~10–15 hrs/week)
-- Intake: Tues/Thurs 9:30–2:30
-- Lead tagging: Strong/Moderate/Nurture/Unqualified + value brackets + urgency
-- Team: Rebecca (attorney/founder), Dawn (ops), Rain (law student), Gigi (entertainment), Alyssa (of counsel), Amore (marketing)
-- Q2 target: 20 calls/mo, 30% conversion, 1 workshop/month
-
-### 7PM Agency
-- Social media strategy for high-profile client (Moses)
-- 3 content concepts/week
+### Quick Status (2026-05-13)
+- Pathset landing page: not yet deployed (Q2 blocker)
+- Attorney partners: 0 of 3 signed
+- LSAT June exam: ~5 weeks out — daily RC + LR reps
+- Anthropic Claude for Legal launched 2026-05-12 — Pathset differentiates at the decision layer
 
 ## Current Goals
 - [ ] Deploy Pathset landing page to Vercel
 - [ ] 3 attorney partners signed
 - [ ] Lawmatics webhook live
 - [ ] $50 consultation funnel built
-- [ ] LSAT 170 (June/August exam)
+- [ ] LSAT 170 (June exam)
 
 ## Interests to Bias Content Toward
 - Legal tech and AI in law
@@ -41,6 +30,10 @@ IP education and attorney-matching platform for early-stage founders.
 - LSAT / logic / analytical reasoning
 - Florida Bar ethics and compliance
 - Startup accelerators (SPARC)
+
+## System Health
+→ See [`memory/topics/skill-health.md`](topics/skill-health.md) for skill reliability patterns
+→ See [`memory/topics/security.md`](topics/security.md) for open workflow security findings (3 items, April audit)
 
 ## Notification Channel
 - Telegram (primary)
