@@ -1,0 +1,57 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Threads IP Post",
+        "description": "Ready to post on Threads (@taylormadein93)"
+      },
+      "children": [
+        "main-stack"
+      ]
+    },
+    "main-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "status-badge",
+        "topic-badge",
+        "separator",
+        "tweet-card"
+      ]
+    },
+    "status-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Ready to Post",
+        "variant": "success"
+      }
+    },
+    "topic-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Trademark",
+        "variant": "default"
+      }
+    },
+    "separator": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "tweet-card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "Taylor McGhee",
+        "handle": "taylormadein93",
+        "text": "Registering your LLC doesn't protect your brand name.\n\nState registration means another business in that state can't incorporate under the exact same name. That's it.\n\nSomeone in another state can use your name in your industry. You have no legal standing to stop them.\n\nFederal trademark is what gives you nationwide rights in your category. State incorporation is just paperwork."
+      }
+    }
+  }
+}
