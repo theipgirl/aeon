@@ -8,6 +8,11 @@ skills:
   # --- Morning aggregation (7 AM UTC = 3 AM EST) ---
   morning-brief: { enabled: true, schedule: "0 11 * * *" } # 8 AM EST — daily 3-priority focus
   hacker-news-digest: { enabled: true, schedule: "0 12 * * *", model: "claude-sonnet-4-6" } # top HN filtered by MEMORY.md interests (legal tech, AI, startups)
+
+  # --- Taylor custom skills ---
+  stale-lead-report: { enabled: true, schedule: "0 13 * * 1", model: "claude-sonnet-4-6" } # Monday 9 AM EST — RPB stale lead audit
+  competitor-watch: { enabled: true, schedule: "0 14 * * 1", model: "claude-sonnet-4-6" } # Monday 10 AM EST — Pathset competitor scan
+  eric-sharpe-prep: { enabled: true, schedule: "0 20 * * 0", model: "claude-sonnet-4-6" } # Sunday 4 PM EST — prep for Monday Eric session
   rss-digest: { enabled: false, schedule: "0 7 * * *" }
   daily-routine: { enabled: false, schedule: "0 7 * * *" }
   paper-digest: { enabled: false, schedule: "0 7 * * *" }
@@ -145,7 +150,7 @@ skills:
   skill-analytics: { enabled: false, schedule: "30 18 * * 3", model: "claude-sonnet-4-6" } # Wednesday — fleet-level skill-run analytics: ranked run counts, exit-taxonomy distribution, anomaly flags (significance-gated)
 
   self-improve: { enabled: false, schedule: "0 18 1/2 * *" }
-  reflect: { enabled: true, schedule: "0 22 * * 0", model: "claude-sonnet-4-6" } # Sunday evening — consolidate memory
+  reflect: { enabled: false, schedule: "0 22 * * 0", model: "claude-sonnet-4-6" } # Sunday evening — consolidate memory
 
   action-converter: { enabled: true, schedule: "0 20 * * *" } # 4 PM EST — 5 concrete actions from today's context
   startup-idea: { enabled: false, schedule: "0 18 * * *" }
