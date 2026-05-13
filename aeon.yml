@@ -6,7 +6,7 @@
 
 skills:
   # --- Morning aggregation (7 AM UTC = 3 AM EST) ---
-  morning-brief: { enabled: true, schedule: "0 12 * * *" } # 8 AM EST — daily 3-priority focus
+  morning-brief: { enabled: true, schedule: "0 11 * * *" } # 8 AM EST — daily 3-priority focus
   hacker-news-digest: { enabled: true, schedule: "0 12 * * *", model: "claude-sonnet-4-6" } # top HN filtered by MEMORY.md interests (legal tech, AI, startups)
   rss-digest: { enabled: false, schedule: "0 7 * * *" }
   daily-routine: { enabled: false, schedule: "0 7 * * *" }
@@ -70,7 +70,12 @@ skills:
 
   security-digest: { enabled: false, schedule: "0 14 * * *" }
   idea-capture: { enabled: true, schedule: "0 14 * * *" } # capture ideas sent via Telegram
-  deal-flow: { enabled: true, schedule: "0 14 * * 1", var: "legal tech, IP, legaltech startups, attorney matching" } # weekly funding round tracker
+  deal-flow:
+    {
+      enabled: true,
+      schedule: "0 14 * * 1",
+      var: "legal tech, IP, legaltech startups, attorney matching"
+    } # weekly funding round tracker
   reg-monitor: { enabled: false, schedule: "0 14 * * 3" } # regulatory developments tracker
 
   # --- Repo intelligence (3 PM UTC) ---
@@ -254,18 +259,18 @@ reactive:
   #   trigger:
   #     - { on: skill-health, when: "last_status = success" }
 
-# Chains — multi-step skill pipelines with parallel execution and output passing.
-# Steps run sequentially; use parallel: [...] for concurrent execution within a step.
-# Skills with consume: [...] receive prior step outputs injected into their context.
-#
-# Format:
-#   chains:
-#     chain-name:
-#       schedule: "cron expression"
-#       on_error: fail-fast          # fail-fast (default) | continue
-#       steps:
-#         - parallel: [skill-a, skill-b]
-#         - skill: skill-c, consume: [skill-a, skill-b]
+  # Chains — multi-step skill pipelines with parallel execution and output passing.
+  # Steps run sequentially; use parallel: [...] for concurrent execution within a step.
+  # Skills with consume: [...] receive prior step outputs injected into their context.
+  #
+  # Format:
+  #   chains:
+  #     chain-name:
+  #       schedule: "cron expression"
+  #       on_error: fail-fast          # fail-fast (default) | continue
+  #       steps:
+  #         - parallel: [skill-a, skill-b]
+  #         - skill: skill-c, consume: [skill-a, skill-b]
 chains:
   # daily-routine:
   #   schedule: "0 7 * * *"
