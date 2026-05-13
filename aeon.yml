@@ -228,6 +228,9 @@ skills:
   auto-workflow: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — var: URL to analyze
   onboard: { enabled: false, schedule: "workflow_dispatch", var: "" } # one-shot setup validator — checks secrets/workflows/memory writability and notifies a checklist with fix commands; pair with ./onboard CLI
 
+  # --- Omi memory sync ---
+  omi-sync: { enabled: true, schedule: "0 6 * * *", model: "claude-sonnet-4-6" } # daily 2 AM EST — sync Omi memories to soul/data/omi-memories.md
+
   # --- Fallback (must be last) ---
   heartbeat: { enabled: true, schedule: "0 8,14,20 * * *" }
 
