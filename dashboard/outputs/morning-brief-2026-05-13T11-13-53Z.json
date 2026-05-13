@@ -1,0 +1,209 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Morning Brief — 2026-05-13 (Wed)"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "section-focus",
+        "sep1",
+        "section-since",
+        "sep2",
+        "section-watch",
+        "sep3",
+        "section-running"
+      ]
+    },
+    "section-focus": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-focus",
+        "focus-item-1",
+        "focus-item-2",
+        "focus-item-3"
+      ]
+    },
+    "heading-focus": {
+      "type": "Heading",
+      "props": {
+        "text": "Focus today",
+        "level": "h2"
+      }
+    },
+    "focus-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "1. Ship Pathset landing to Vercel — why now: Claude for Legal launched yesterday; founder wedge needs a live URL.",
+        "variant": "body"
+      }
+    },
+    "focus-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "2. Send 3 attorney pitches today — why now: Q2 closes in 7 weeks; supply must precede the $50 funnel.",
+        "variant": "body"
+      }
+    },
+    "focus-item-3": {
+      "type": "Text",
+      "props": {
+        "text": "3. LSAT RC + LR, 90 min block — why now: June exam ~5 weeks out; compounding starts today, not Monday.",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-since": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-since",
+        "since-item-1",
+        "since-item-2",
+        "since-item-3"
+      ]
+    },
+    "heading-since": {
+      "type": "Heading",
+      "props": {
+        "text": "Since yesterday",
+        "level": "h2"
+      }
+    },
+    "since-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "First brief sent 11:08 UTC; this is a second cycle — treat as the live one.",
+        "variant": "body"
+      }
+    },
+    "since-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "No daily logs between 2026-03-19 and today — memory of the last six weeks lives in Omi/Granola, not `memory/logs/`.",
+        "variant": "body"
+      }
+    },
+    "since-item-3": {
+      "type": "Text",
+      "props": {
+        "text": "Cron health: morning-brief recovered (4 prior fails); hacker-news-digest, goal-tracker, heartbeat each failed once this morning — watch the 18:00 UTC run.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-watch": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-watch",
+        "watch-item"
+      ]
+    },
+    "heading-watch": {
+      "type": "Heading",
+      "props": {
+        "text": "Watch",
+        "level": "h2"
+      }
+    },
+    "watch-item": {
+      "type": "Text",
+      "props": {
+        "text": "Anthropic shipped Claude for Legal (Artificial Lawyer, 2026-05-12) — generalist AI moving on in-house legal teams. Sharpens Pathset's wedge: founder-side IP education + Florida Bar compliant matching, not legal research. Affects focus #1.",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-running": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-running",
+        "table-running"
+      ]
+    },
+    "heading-running": {
+      "type": "Heading",
+      "props": {
+        "text": "Running today",
+        "level": "h2"
+      }
+    },
+    "table-running": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Time (UTC)"
+        ],
+        "rows": [
+          [
+            "hacker-news-digest",
+            "12:00"
+          ],
+          [
+            "idea-capture",
+            "14:00"
+          ],
+          [
+            "heartbeat",
+            "14:00, 20:00"
+          ],
+          [
+            "goal-tracker",
+            "18:00"
+          ],
+          [
+            "skill-health",
+            "18:00"
+          ],
+          [
+            "action-converter",
+            "20:00"
+          ]
+        ]
+      }
+    }
+  }
+}
