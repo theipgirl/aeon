@@ -15,8 +15,8 @@ skills:
   eric-sharpe-prep: { enabled: true, schedule: "0 20 * * 0", model: "claude-sonnet-4-6" } # Sunday 4 PM EST — prep for Monday Eric session
 
   # --- Threads / content ---
-  threads-ip-post: { enabled: false, schedule: "0 14 * * 1,2,4,5", model: "claude-sonnet-4-6" } # Mon/Tue/Thu/Fri 10 AM EST — enable after THREADS_ACCESS_TOKEN is set
-  threads-token-refresh: { enabled: false, schedule: "0 12 * * 0", model: "claude-sonnet-4-6" } # Sunday noon EST — weekly token refresh
+  threads-ip-post: { enabled: true, schedule: "0 14 * * 1,2,4,5", model: "claude-sonnet-4-6" } # Mon/Tue/Thu/Fri 10 AM EST
+  threads-token-refresh: { enabled: false, schedule: "0 12 * * 0", model: "claude-sonnet-4-6" } # Sunday noon EST — enable after THREADS_ACCESS_TOKEN is set
   rss-digest: { enabled: false, schedule: "0 7 * * *" }
   daily-routine: { enabled: false, schedule: "0 7 * * *" }
   paper-digest: { enabled: false, schedule: "0 7 * * *" }

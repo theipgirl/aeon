@@ -104,30 +104,25 @@ If the draft fails a gate, rewrite. Max 2 rewrites — if still failing, switch 
 
 ### 3. Publish to Threads
 
-**Step A — Create media container:**
+**If `THREADS_ACCESS_TOKEN` is set**, use the Threads API directly:
 
+Step A — Create media container:
 ```bash
 curl -sf -X POST "https://graph.threads.net/v1.0/me/threads" \
   -H "Authorization: Bearer $THREADS_ACCESS_TOKEN" \
   -F "media_type=TEXT" \
   -F "text=<post content>"
 ```
-
 Returns `{ "id": "<creation_id>" }`. If curl fails, use WebFetch POST as fallback.
 
-**Step B — Publish:**
-
+Step B — Publish:
 ```bash
 curl -sf -X POST "https://graph.threads.net/v1.0/me/threads_publish" \
   -H "Authorization: Bearer $THREADS_ACCESS_TOKEN" \
   -F "creation_id=<id from Step A>"
 ```
 
-Returns `{ "id": "<post_id>" }`.
-
-For multi-post threads (Format B lists that run long):
-- Create each post as a container with `reply_to_id` set to the previous post's `id` after publishing
-- Publish sequentially with 2-second pauses between
+**If `THREADS_ACCESS_TOKEN` is not set**, skip posting and send the draft to Telegram via `./notify` with a clear "READY TO POST" header so Taylor can copy-paste it manually. Mark `post_id` as `manual-YYYY-MM-DD` in the log.
 
 ### 4. Log and notify
 
