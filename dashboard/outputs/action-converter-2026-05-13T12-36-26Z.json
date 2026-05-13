@@ -1,0 +1,270 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "5 Actions — 2026-05-13"
+      },
+      "children": [
+        "text_shape",
+        "sep1",
+        "action1_stack",
+        "sep2",
+        "action2_stack",
+        "sep3",
+        "action3_stack",
+        "sep4",
+        "action4_stack",
+        "sep5",
+        "action5_stack",
+        "sep6",
+        "text_sources"
+      ]
+    },
+    "text_shape": {
+      "type": "Text",
+      "props": {
+        "text": "Shape: Make Pathset visible — deploy, recruit, scaffold the funnel; protect LSAT compounding.",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "action1_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action1_heading",
+        "action1_why",
+        "action1_done",
+        "action1_loop"
+      ]
+    },
+    "action1_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "1. Deploy the Pathset landing page with `vercel --prod` and verify the public URL serves the founder-side IP wedge copy.",
+        "level": "h3"
+      }
+    },
+    "action1_why": {
+      "type": "Text",
+      "props": {
+        "text": "why: 0 attorney signs and a frozen $50 funnel both unblock the moment the URL is live — single load-bearing artifact.",
+        "variant": "body"
+      }
+    },
+    "action1_done": {
+      "type": "Text",
+      "props": {
+        "text": "done: Public Vercel URL returns 200 with landing copy; URL committed to memory/topics/pathset.md under Status.",
+        "variant": "body"
+      }
+    },
+    "action1_loop": {
+      "type": "Badge",
+      "props": {
+        "text": "deploy-pathset-landing",
+        "variant": "outline"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "action2_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action2_heading",
+        "action2_why",
+        "action2_done",
+        "action2_loop"
+      ]
+    },
+    "action2_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "2. Email 3 named Florida Bar IP attorneys today with the Pathset partner pitch — pull names from RPB's referral list or a Florida Bar IP filter.",
+        "level": "h3"
+      }
+    },
+    "action2_why": {
+      "type": "Text",
+      "props": {
+        "text": "why: 0 of 3 partners signed, Q2 closes in 7 weeks — attorney supply is the binding constraint on the funnel.",
+        "variant": "body"
+      }
+    },
+    "action2_done": {
+      "type": "Text",
+      "props": {
+        "text": "done: 3 outbound emails sent; recipient names + dates appended to memory/topics/pathset.md.",
+        "variant": "body"
+      }
+    },
+    "action2_loop": {
+      "type": "Badge",
+      "props": {
+        "text": "sign-attorneys",
+        "variant": "outline"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "action3_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action3_heading",
+        "action3_why",
+        "action3_done",
+        "action3_loop"
+      ]
+    },
+    "action3_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "3. Do one 35-min RC section + one 35-min LR section from the latest PrepTest, score them, and append a 5-bullet error pattern to memory/topics/work.md.",
+        "level": "h3"
+      }
+    },
+    "action3_why": {
+      "type": "Text",
+      "props": {
+        "text": "why: June exam is ~5 weeks out; daily LR/RC compounding is the named protocol from 154 → 170.",
+        "variant": "body"
+      }
+    },
+    "action3_done": {
+      "type": "Text",
+      "props": {
+        "text": "done: Both sections scored; dated heading with 5-bullet error pattern in memory/topics/work.md.",
+        "variant": "body"
+      }
+    },
+    "action3_loop": {
+      "type": "Badge",
+      "props": {
+        "text": "lsat-rc-lr",
+        "variant": "outline"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "action4_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action4_heading",
+        "action4_why",
+        "action4_done",
+        "action4_loop"
+      ]
+    },
+    "action4_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "4. Create the Stripe payment link for the $50 IP Clarity Session and a 30-min Cal.com booking page, then commit both URLs to the Pathset repo on a clarity-session feature branch with PR opened.",
+        "level": "h3"
+      }
+    },
+    "action4_why": {
+      "type": "Text",
+      "props": {
+        "text": "why: Funnel primitives don't depend on landing being live — parallelize so launch day is one-click.",
+        "variant": "body"
+      }
+    },
+    "action4_done": {
+      "type": "Text",
+      "props": {
+        "text": "done: Stripe link + Cal.com URL committed to Pathset repo; PR open against main.",
+        "variant": "body"
+      }
+    },
+    "action4_loop": {
+      "type": "Badge",
+      "props": {
+        "text": "build-50-funnel",
+        "variant": "outline"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "action5_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action5_heading",
+        "action5_why",
+        "action5_done",
+        "action5_loop"
+      ]
+    },
+    "action5_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "5. Inspect the latest GitHub Actions run for hacker-news-digest, identify the cause from logs, and either fix it on a branch or file memory/issues/ISS-001.md with the error trace and severity.",
+        "level": "h3"
+      }
+    },
+    "action5_why": {
+      "type": "Text",
+      "props": {
+        "text": "why: 3 cron skills failed this morning; HN digest is the news input for morning-brief — fix once, daily flow recovers.",
+        "variant": "body"
+      }
+    },
+    "action5_done": {
+      "type": "Text",
+      "props": {
+        "text": "done: PR opened against the skill, or memory/issues/ISS-001.md exists with full frontmatter (id, severity, root_cause).",
+        "variant": "body"
+      }
+    },
+    "action5_loop": {
+      "type": "Badge",
+      "props": {
+        "text": "fix-hacker-news-digest",
+        "variant": "outline"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {}
+    },
+    "text_sources": {
+      "type": "Text",
+      "props": {
+        "text": "sources: memory=46 logs=1 topics=4 prs=0 cron_failing=3 mode=OK",
+        "variant": "caption"
+      }
+    }
+  }
+}
