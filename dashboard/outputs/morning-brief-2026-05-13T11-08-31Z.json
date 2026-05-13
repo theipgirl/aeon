@@ -1,0 +1,279 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Morning Brief — 2026-05-13"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "section_focus",
+        "sep_1",
+        "section_stuck",
+        "sep_2",
+        "section_watch",
+        "sep_3",
+        "section_running"
+      ]
+    },
+    "section_focus": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h_focus",
+        "focus_1",
+        "focus_2",
+        "focus_3"
+      ]
+    },
+    "h_focus": {
+      "type": "Heading",
+      "props": {
+        "text": "Focus today",
+        "level": "h3"
+      }
+    },
+    "focus_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "focus_1_title",
+        "focus_1_why"
+      ]
+    },
+    "focus_1_title": {
+      "type": "Text",
+      "props": {
+        "text": "1. Ship Pathset landing page to Vercel",
+        "variant": "lead"
+      }
+    },
+    "focus_1_why": {
+      "type": "Text",
+      "props": {
+        "text": "why now: deploy gates attorney recruiting and the $50 funnel.",
+        "variant": "caption"
+      }
+    },
+    "focus_2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "focus_2_title",
+        "focus_2_why"
+      ]
+    },
+    "focus_2_title": {
+      "type": "Text",
+      "props": {
+        "text": "2. Pitch 3 attorney candidates (Florida Bar)",
+        "variant": "lead"
+      }
+    },
+    "focus_2_why": {
+      "type": "Text",
+      "props": {
+        "text": "why now: Q2 closes in seven weeks; can't seat consults without partners.",
+        "variant": "caption"
+      }
+    },
+    "focus_3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "focus_3_title",
+        "focus_3_why"
+      ]
+    },
+    "focus_3_title": {
+      "type": "Text",
+      "props": {
+        "text": "3. Lock daily LSAT reps (RC + LR drills)",
+        "variant": "lead"
+      }
+    },
+    "focus_3_why": {
+      "type": "Text",
+      "props": {
+        "text": "why now: June exam is one cycle out; 154→170 needs cadence, not crunches.",
+        "variant": "caption"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_stuck": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h_stuck",
+        "alert_logs",
+        "alert_fleet"
+      ]
+    },
+    "h_stuck": {
+      "type": "Heading",
+      "props": {
+        "text": "Since yesterday",
+        "level": "h3"
+      }
+    },
+    "alert_logs": {
+      "type": "Alert",
+      "props": {
+        "title": "stuck: no daily logs since 2026-03-19",
+        "message": "confirm whether you've been working offline or the logging chain is broken.",
+        "type": "warning"
+      }
+    },
+    "alert_fleet": {
+      "type": "Alert",
+      "props": {
+        "title": "stuck: skill fleet",
+        "message": "morning-brief failed four runs straight before this one; hacker-news-digest, goal-tracker, heartbeat each failed today. skill-repair should pick this up.",
+        "type": "warning"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_watch": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h_watch",
+        "watch_text"
+      ]
+    },
+    "h_watch": {
+      "type": "Heading",
+      "props": {
+        "text": "Watch",
+        "level": "h3"
+      }
+    },
+    "watch_text": {
+      "type": "Text",
+      "props": {
+        "text": "USPTO shipped a trademark image-search tool in April and a GenAI tool for examiners lands July — implication for focus #1: Pathset's pitch is the human decision layer on top of USPTO's AI, not a competitor to it.",
+        "variant": "body"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_running": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h_running",
+        "schedule_stack"
+      ]
+    },
+    "h_running": {
+      "type": "Heading",
+      "props": {
+        "text": "Running today",
+        "level": "h3"
+      }
+    },
+    "schedule_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "sched_1",
+        "sched_2",
+        "sched_3",
+        "sched_4",
+        "sched_5",
+        "sched_6"
+      ]
+    },
+    "sched_1": {
+      "type": "Text",
+      "props": {
+        "text": "hacker-news-digest @ 12:00 UTC",
+        "variant": "body"
+      }
+    },
+    "sched_2": {
+      "type": "Text",
+      "props": {
+        "text": "idea-capture @ 14:00 UTC",
+        "variant": "body"
+      }
+    },
+    "sched_3": {
+      "type": "Text",
+      "props": {
+        "text": "heartbeat @ 14:00 UTC, 20:00 UTC",
+        "variant": "body"
+      }
+    },
+    "sched_4": {
+      "type": "Text",
+      "props": {
+        "text": "goal-tracker @ 18:00 UTC",
+        "variant": "body"
+      }
+    },
+    "sched_5": {
+      "type": "Text",
+      "props": {
+        "text": "skill-health @ 18:00 UTC",
+        "variant": "body"
+      }
+    },
+    "sched_6": {
+      "type": "Text",
+      "props": {
+        "text": "action-converter @ 20:00 UTC",
+        "variant": "body"
+      }
+    }
+  }
+}
