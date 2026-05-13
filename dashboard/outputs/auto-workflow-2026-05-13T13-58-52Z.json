@@ -1,0 +1,23 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "auto-workflow"
+      },
+      "children": [
+        "text"
+      ]
+    },
+    "text": {
+      "type": "Text",
+      "props": {
+        "text": "set var= to one or more URLs (comma-separated)",
+        "variant": "body"
+      },
+      "children": []
+    }
+  }
+}

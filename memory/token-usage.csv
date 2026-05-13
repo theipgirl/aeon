@@ -3,4 +3,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-13,morning-brief,claude-opus-4-7,25,6267,548733,63316
 2026-05-13,morning-brief,claude-opus-4-7,8684,10312,1427071,62074
 2026-05-13,daily-routine,claude-opus-4-7,106,35485,6464518,106141
-2026-05-13,threads-ip-post,claude-sonnet-4-6,18,6422,505648,23447
+2026-05-13,thread-formatter,claude-opus-4-7,72,6392,242768,26317
